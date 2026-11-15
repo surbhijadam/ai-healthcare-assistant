@@ -35,6 +35,7 @@ auth_nav_right = (
     f'<span style="color: #155c73; font-weight: 700; font-size: 0.88rem;">{first_name}</span>'
     f'<div style="width: 32px; height: 32px; border-radius: 50%; background: #d5eee9; color: #08675f; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem;">{initials}</div>'
     f'<a href="/Profile" target="_self" class="canva-nav-link" style="color: #547382; font-size: 0.86rem;">Profile</a>'
+    '<a href="/Login_Register" target="_self" class="canva-nav-link" style="color: #087c76; font-size: 0.86rem; font-weight: 700;">Login / Switch</a>'
     f'</div>'
 )
 
@@ -49,7 +50,8 @@ top_navbar_html = (
     '<a href="/" target="_self" class="canva-nav-link">Home</a>'
     '<a href="/#features" target="_self" class="canva-nav-link">Features</a>'
     '<a href="/Dashboard" target="_self" class="canva-nav-link">Dashboard</a>'
-    '<a href="/About" target="_self" class="canva-nav-link">About</a>'
+    '<a href="/Login_Register" target="_self" class="canva-nav-link">Login / Register</a>'
+        '<a href="/About" target="_self" class="canva-nav-link">About</a>'
     '<a href="/Contact" target="_self" class="canva-nav-link">Contact</a>'
     '</div>'
     f'{auth_nav_right}'
@@ -99,6 +101,11 @@ with col_side:
         '<a href="/Admin_Panel" target="_self" class="workspace-item">'
         '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>'
         '<span>Admin panel</span>'
+        '</a>'
+        '<div class="workspace-divider"></div>'
+        '<a href="/Login_Register" target="_self" class="workspace-item">'
+        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>'
+        '<span>Login / Register</span>'
         '</a>'
         '</div>'
     )
@@ -323,6 +330,7 @@ footer_html = (
     '<a href="/" target="_self" style="color: #FFFFFF !important; text-decoration: none; font-weight: 600;">Home</a>'
     '<a href="/#features" target="_self" style="color: #FFFFFF !important; text-decoration: none; font-weight: 600;">Features</a>'
     '<a href="/About" target="_self" style="color: #FFFFFF !important; text-decoration: none; font-weight: 600;">About</a>'
+    '<a href="/Login_Register" target="_self" style="color: #FFFFFF !important; text-decoration: none; font-weight: 600;">Login / Register</a>'
     '<a href="/Contact" target="_self" style="color: #FFFFFF !important; text-decoration: none; font-weight: 600;">Contact</a>'
     '<a href="/Dashboard" target="_self" style="color: #FFFFFF !important; text-decoration: none; font-weight: 600;">Dashboard</a>'
     '</div>'

@@ -80,8 +80,7 @@ st.markdown(
 
 # Synchronize active session state
 api_client.sync_session_state()
-if st.session_state.get("authenticated") and st.session_state.get("user"):
-    st.switch_page("pages/1_Dashboard.py")
+logged_in_user = st.session_state.get("user") if st.session_state.get("authenticated") else None
 
 # Support URL-driven mode toggle (?mode=register or ?mode=login)
 mode_param = st.query_params.get("mode", "")
@@ -112,6 +111,7 @@ st.markdown(
                 <a href="/" target="_self" class="canva-nav-link">Home</a>
                 <a href="/#features" target="_self" class="canva-nav-link">Features</a>
                 <a href="/Dashboard" target="_self" class="canva-nav-link">Dashboard</a>
+                <a href="/Login_Register" target="_self" class="canva-nav-link active" style="color: #076c70; font-weight: 800;">Login / Register</a>
                 <a href="/About" target="_self" class="canva-nav-link">About</a>
                 <a href="/Contact" target="_self" class="canva-nav-link">Contact</a>
             </div>
@@ -124,6 +124,18 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+if logged_in_user:
+    st.info(f"👤 Currently signed in as **{logged_in_user.get('full_name', 'User')}** (`{logged_in_user.get('email')}`). You can continue to your Dashboard or log out below to switch accounts.")
+    c_dash, c_logout, _ = st.columns([1.5, 1.5, 4])
+    with c_dash:
+        if st.button("🚀 Go to Dashboard", key="auth_goto_dash", type="primary", use_container_width=True):
+            st.switch_page("pages/1_Dashboard.py")
+    with c_logout:
+        if st.button("🚪 Logout / Switch Account", key="auth_switch_acc", use_container_width=True):
+            api_client.logout()
+            st.rerun()
+    st.markdown("<div style='margin-bottom: 1.5rem;'></div>", unsafe_allow_html=True)
 
 # ==============================================================================
 # MODE 1: "LOGIN" (Exact Canva 2-Column Layout: Photo Left | Login Card Right)

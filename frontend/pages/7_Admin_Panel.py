@@ -68,7 +68,7 @@ ai_interactions = f"{stats_data.get('assistant_interactions_30_days', 0):,}"
 # ==============================================================================
 # TOP NAVBAR (100% Canva Layout: Logo Left | Menu Center | Auth Right)
 # ==============================================================================
-user_greeting = f'<a href="/Profile" target="_self" class="canva-nav-link" style="color: #087c76; font-weight: 700;">👤 {user_session.get("full_name", "Admin")}</a>'
+user_greeting = f'<a href="/Profile" target="_self" class="canva-nav-link" style="color: #087c76; font-weight: 700;">👤 {user_session.get("full_name", "Admin")}</a><a href="/Login_Register" target="_self" class="canva-nav-link" style="color: #087c76; font-size: 0.86rem; font-weight: 700;">Login / Switch</a>'
 
 top_navbar_html = f"""
 <div style="background: #FFFFFF; border-bottom: 1px solid #dce9ef; padding: 12px 24px; border-radius: 16px; margin-bottom: 2rem; box-shadow: 0 4px 20px rgba(24, 75, 103, 0.04);">
@@ -81,6 +81,7 @@ top_navbar_html = f"""
 <a href="/" target="_self" class="canva-nav-link">Home</a>
 <a href="/#features" target="_self" class="canva-nav-link">Features</a>
 <a href="/Dashboard" target="_self" class="canva-nav-link">Dashboard</a>
+<a href="/Login_Register" target="_self" class="canva-nav-link">Login / Register</a>
 <a href="/About" target="_self" class="canva-nav-link">About</a>
 <a href="/Contact" target="_self" class="canva-nav-link">Contact</a>
 </div>
@@ -130,6 +131,11 @@ with col_side:
         '<a href="/Profile" target="_self" class="workspace-item">'
         '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>'
         '<span>Profile</span>'
+        '</a>'
+        '<div class="workspace-divider"></div>'
+        '<a href="/Login_Register" target="_self" class="workspace-item">'
+        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>'
+        '<span>Login / Register</span>'
         '</a>'
         '</div>'
     )
@@ -402,6 +408,7 @@ footer_html = (
     '<a href="/" target="_self" style="color: #FFFFFF !important; text-decoration: none; font-weight: 600;">Home</a>'
     '<a href="/#features" target="_self" style="color: #FFFFFF !important; text-decoration: none; font-weight: 600;">Features</a>'
     '<a href="/About" target="_self" style="color: #FFFFFF !important; text-decoration: none; font-weight: 600;">About</a>'
+    '<a href="/Login_Register" target="_self" style="color: #FFFFFF !important; text-decoration: none; font-weight: 600;">Login / Register</a>'
     '<a href="/Contact" target="_self" style="color: #FFFFFF !important; text-decoration: none; font-weight: 600;">Contact</a>'
     '<a href="/Dashboard" target="_self" style="color: #FFFFFF !important; text-decoration: none; font-weight: 600;">Dashboard</a>'
     '</div>'
