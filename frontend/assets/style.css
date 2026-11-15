@@ -1,0 +1,1094 @@
+/* ==========================================================================
+   MediCare AI — Canva-Aligned Design System & Streamlit Theme
+   Palette: Ink (#193648), Muted (#637d8c), Blue (#176a9a), Teal (#087c76),
+            Line (#dce9ef), Mint (#e5f5ef), Soft (#eef8f8), Base (#f5f9fa)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --ink: #193648;
+    --muted: #637d8c;
+    --blue: #176a9a;
+    --teal: #087c76;
+    --line: #dce9ef;
+    --mint: #e5f5ef;
+    --soft: #eef8f8;
+    --base: #f5f9fa;
+}
+
+/* Global Application Reset & Typography (Preserves Icon Ligatures) */
+html, body, [data-testid="stAppViewContainer"], section.main, .main {
+    scroll-behavior: smooth !important;
+}
+
+html, body, p, label, .stMarkdown, .stText {
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--ink);
+}
+
+.stApp {
+    background-color: var(--base) !important;
+}
+
+/* ==========================================================================
+   REMOVE THE STREAMLIT UPPER FLOATING HEADER BAR & COLLAPSE ARROW TEXT
+   ========================================================================== */
+header[data-testid="stHeader"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#MainMenu, footer, [data-testid="stDecoration"], [data-testid="stToolbar"] {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Completely remove the 'keyboard_double_arrow' collapse button & header in sidebar */
+[data-testid="stSidebarHeader"],
+[data-testid="stSidebarCollapseButton"],
+[data-testid="stSidebarCollapsedControl"],
+button[aria-label*="sidebar" i],
+button[aria-label*="collapse" i],
+button[aria-label*="close" i] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Streamlit Container Width & Comfortable Top Spacing */
+.block-container {
+    padding-top: 2rem !important;
+    padding-bottom: 3.5rem !important;
+    max-width: 1380px !important;
+}
+
+/* Anchor Smooth Scroll Offset */
+#features {
+    scroll-margin-top: 2rem !important;
+    display: block !important;
+}
+
+/* ==========================================================================
+   CANVA NAVIGATION LINKS & BUTTONS
+   ========================================================================== */
+.canva-nav-link {
+    color: #547382 !important;
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    padding: 6px 12px !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+}
+
+.canva-nav-link:hover, .canva-nav-link.active {
+    color: #076c70 !important;
+    background-color: #dff2f1 !important;
+}
+
+.canva-btn-primary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #176a9a !important;
+    color: #FFFFFF !important;
+    border-radius: 12px !important;
+    font-weight: 800 !important;
+    font-size: 0.9rem !important;
+    text-decoration: none !important;
+    padding: 0.65rem 1.25rem !important;
+    box-shadow: 0 4px 14px rgba(23, 106, 154, 0.22) !important;
+    transition: all 0.2s ease !important;
+}
+
+.canva-btn-primary:hover {
+    background: #12557d !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(23, 106, 154, 0.35) !important;
+    color: #FFFFFF !important;
+}
+
+.canva-btn-secondary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #e9f5f6 !important;
+    color: #155d72 !important;
+    border-radius: 12px !important;
+    font-weight: 800 !important;
+    font-size: 0.9rem !important;
+    text-decoration: none !important;
+    padding: 0.65rem 1.25rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.canva-btn-secondary:hover {
+    background: #d9eeef !important;
+    color: #093c4b !important;
+    transform: translateY(-1px) !important;
+}
+
+/* ==========================================================================
+   STREAMLIT SIDEBAR OVERRIDES (Canva Clean White Workspace & Custom Names)
+   ========================================================================== */
+section[data-testid="stSidebar"] {
+    background-color: #FFFFFF !important;
+    border-right: 1px solid var(--line) !important;
+    box-shadow: 2px 0 12px rgba(24, 75, 103, 0.03) !important;
+}
+
+section[data-testid="stSidebar"] > div {
+    background-color: #FFFFFF !important;
+}
+
+/* Sidebar Navigation Items */
+[data-testid="stSidebarNav"] {
+    padding-top: 1rem !important;
+}
+
+[data-testid="stSidebarNav"] ul {
+    gap: 4px !important;
+}
+
+[data-testid="stSidebarNav"] li a {
+    padding: 0.65rem 0.95rem !important;
+    border-radius: 12px !important;
+    color: #567484 !important;
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    transition: all 0.2s ease !important;
+    background-color: transparent !important;
+    font-family: 'Manrope', sans-serif !important;
+}
+
+[data-testid="stSidebarNav"] li a span {
+    color: #567484 !important;
+    font-weight: 700 !important;
+    font-family: 'Manrope', sans-serif !important;
+}
+
+[data-testid="stSidebarNav"] li a:hover {
+    background-color: #e7f5f3 !important;
+    color: #087c76 !important;
+}
+
+[data-testid="stSidebarNav"] li a:hover span {
+    color: #087c76 !important;
+}
+
+/* Active Page in Sidebar */
+[data-testid="stSidebarNav"] li a[aria-current="page"] {
+    background-color: #e7f5f3 !important;
+    color: #087c76 !important;
+    border-left: 3px solid #087c76 !important;
+}
+
+[data-testid="stSidebarNav"] li a[aria-current="page"] span {
+    color: #087c76 !important;
+    font-weight: 800 !important;
+}
+
+/* --------------------------------------------------------------------------
+   RENAME SIDEBAR LABELS: "app" -> "Home", "Auth" -> "Login / Register"
+   -------------------------------------------------------------------------- */
+
+/* 1. Target "app" link (first child or containing 'app') -> show "Home" */
+[data-testid="stSidebarNav"] li:first-child a span,
+a[data-testid="stSidebarNavLink"][href*="app"] span {
+    display: none !important;
+}
+[data-testid="stSidebarNav"] li:first-child a::after,
+a[data-testid="stSidebarNavLink"][href*="app"]::after {
+    content: "Home" !important;
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    color: #567484 !important;
+    font-family: 'Manrope', sans-serif !important;
+}
+[data-testid="stSidebarNav"] li:first-child a:hover::after,
+[data-testid="stSidebarNav"] li:first-child a[aria-current="page"]::after,
+a[data-testid="stSidebarNavLink"][href*="app"]:hover::after,
+a[data-testid="stSidebarNavLink"][href*="app"][aria-current="page"]::after {
+    color: #087c76 !important;
+    font-weight: 800 !important;
+}
+
+/* 2. Target "Auth" / "Login" link (second child) -> show "Login / Register" */
+[data-testid="stSidebarNav"] li:nth-child(2) a span,
+a[data-testid="stSidebarNavLink"][href*="Auth"] span,
+a[data-testid="stSidebarNavLink"][href*="Login"] span {
+    display: none !important;
+}
+[data-testid="stSidebarNav"] li:nth-child(2) a::after,
+a[data-testid="stSidebarNavLink"][href*="Auth"]::after,
+a[data-testid="stSidebarNavLink"][href*="Login"]::after {
+    content: "Login / Register" !important;
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    color: #567484 !important;
+    font-family: 'Manrope', sans-serif !important;
+}
+[data-testid="stSidebarNav"] li:nth-child(2) a:hover::after,
+[data-testid="stSidebarNav"] li:nth-child(2) a[aria-current="page"]::after,
+a[data-testid="stSidebarNavLink"][href*="Auth"]:hover::after,
+a[data-testid="stSidebarNavLink"][href*="Auth"][aria-current="page"]::after,
+a[data-testid="stSidebarNavLink"][href*="Login"]:hover::after,
+a[data-testid="stSidebarNavLink"][href*="Login"][aria-current="page"]::after {
+    color: #087c76 !important;
+    font-weight: 800 !important;
+}
+
+/* ==========================================================================
+   STREAMLIT BUTTON OVERRIDES (Canva Action & Secondary Buttons)
+   ========================================================================== */
+.stButton > button {
+    border-radius: 12px !important;
+    font-family: 'Manrope', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    padding: 0.65rem 1.15rem !important;
+    transition: all 0.2s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Primary Button & Form Submit Buttons (Canva Blue & Bold White Text) */
+button[kind="primary"],
+button[kind="primaryFormSubmit"],
+button[data-testid="stBaseButton-primary"],
+button[data-testid="stBaseButton-primaryFormSubmit"],
+div[data-testid="stFormSubmitButton"] button,
+.stButton > button[kind="primary"],
+.stButton > button[data-testid="stBaseButton-primary"] {
+    background: #176a9a !important;
+    background-color: #176a9a !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 14px rgba(23, 106, 154, 0.22) !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Force ALL child elements (p, span, div) inside Primary & Form Submit buttons to be BOLD WHITE */
+button[kind="primary"] *,
+button[kind="primaryFormSubmit"] *,
+button[data-testid="stBaseButton-primary"] *,
+button[data-testid="stBaseButton-primaryFormSubmit"] *,
+div[data-testid="stFormSubmitButton"] button *,
+div[data-testid="stFormSubmitButton"] button p,
+div[data-testid="stFormSubmitButton"] button span,
+div[data-testid="stFormSubmitButton"] button div,
+.stButton > button[kind="primary"] *,
+.stButton > button[kind="primary"] p,
+.stButton > button[kind="primary"] span {
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 1rem !important;
+}
+
+button[kind="primary"]:hover,
+button[kind="primaryFormSubmit"]:hover,
+button[data-testid="stBaseButton-primary"]:hover,
+button[data-testid="stBaseButton-primaryFormSubmit"]:hover,
+div[data-testid="stFormSubmitButton"] button:hover,
+.stButton > button[kind="primary"]:hover,
+.stButton > button[data-testid="stBaseButton-primary"]:hover {
+    background: #12557d !important;
+    background-color: #12557d !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(23, 106, 154, 0.35) !important;
+}
+
+button[kind="primary"]:hover *,
+button[kind="primaryFormSubmit"]:hover *,
+button[data-testid="stBaseButton-primary"]:hover *,
+button[data-testid="stBaseButton-primaryFormSubmit"]:hover *,
+div[data-testid="stFormSubmitButton"] button:hover *,
+.stButton > button[kind="primary"]:hover *,
+.stButton > button[data-testid="stBaseButton-primary"]:hover * {
+    color: #FFFFFF !important;
+}
+
+/* Secondary Button (Canva Soft Mint/Teal) */
+.stButton > button[kind="secondary"],
+.stButton > button:not([kind="primary"]) {
+    background: #e9f5f6 !important;
+    background-color: #e9f5f6 !important;
+    color: #155d72 !important;
+    border: 1px solid #cddfe6 !important;
+    box-shadow: none !important;
+}
+
+.stButton > button:not([kind="primary"]):hover {
+    background: #d9eeef !important;
+    background-color: #d9eeef !important;
+    color: #093c4b !important;
+    border-color: #087c76 !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Form Submit Buttons */
+button[kind="primaryFormSubmit"],
+div[data-testid="stFormSubmitButton"] button {
+    background: #176a9a !important;
+    background-color: #176a9a !important;
+    color: #FFFFFF !important;
+    border-radius: 12px !important;
+    font-weight: 800 !important;
+    border: none !important;
+    font-family: 'Manrope', sans-serif !important;
+}
+
+button[kind="primaryFormSubmit"] *,
+div[data-testid="stFormSubmitButton"] button * {
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+}
+
+button[kind="primaryFormSubmit"]:hover,
+div[data-testid="stFormSubmitButton"] button:hover {
+    background: #12557d !important;
+    background-color: #12557d !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(23, 106, 154, 0.35) !important;
+}
+
+button[kind="primaryFormSubmit"]:hover *,
+div[data-testid="stFormSubmitButton"] button:hover * {
+    color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   INPUTS, SELECTS & TEXT AREAS
+   ========================================================================== */
+.stTextInput input,
+.stTextArea textarea,
+.stSelectbox div[data-baseweb="select"] {
+    background-color: #FFFFFF !important;
+    color: var(--ink) !important;
+    border: 1px solid #cddfe6 !important;
+    border-radius: 12px !important;
+    font-family: 'Manrope', sans-serif !important;
+}
+
+.stTextInput input:focus,
+.stTextArea textarea:focus {
+    border-color: #087c76 !important;
+    box-shadow: 0 0 0 3px #b5e8dd !important;
+}
+
+/* Checkbox Customization (Canva Teal Tick & Clean Label) */
+div[data-testid="stCheckbox"] label span:first-child {
+    border-radius: 6px !important;
+}
+
+div[data-testid="stCheckbox"] label p {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    color: #547382 !important;
+    margin: 0 !important;
+}
+
+/* Header & Typography Styling */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', sans-serif !important;
+    color: var(--ink) !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em;
+}
+
+/* Canva Eyebrow Header */
+.eyebrow {
+    color: var(--teal) !important;
+    font-size: 0.76rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.13em !important;
+    text-transform: uppercase !important;
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+.muted {
+    color: var(--muted) !important;
+}
+
+.tiny {
+    font-size: 0.78rem !important;
+}
+
+/* Canva Surface Card */
+.surface {
+    background: #FFFFFF !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 22px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 12px 40px rgba(24, 75, 103, 0.055) !important;
+    margin-bottom: 1.25rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.surface:hover {
+    box-shadow: 0 16px 45px rgba(24, 75, 103, 0.08) !important;
+}
+
+/* ==========================================================================
+   UNIFORM EQUAL-HEIGHT FEATURE CARDS (Same Shape & Exact Alignment Across Columns)
+   ========================================================================== */
+.feature-card-uniform {
+    background: #FFFFFF !important;
+    border: 1px solid #dce9ef !important;
+    border-radius: 22px !important;
+    padding: 1.4rem 1.4rem !important;
+    height: 245px !important;
+    min-height: 245px !important;
+    max-height: 245px !important;
+    box-shadow: 0 8px 30px rgba(24, 75, 103, 0.04) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    box-sizing: border-box !important;
+    margin-bottom: 0.85rem !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.feature-card-uniform:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 14px 38px rgba(24, 75, 103, 0.08) !important;
+}
+
+.feature-card-icon {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 12px !important;
+    background: #e8f6f3 !important;
+    color: #087c76 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.25rem !important;
+    margin-bottom: 0.65rem !important;
+    flex-shrink: 0 !important;
+}
+
+.feature-card-title {
+    font-size: 1.18rem !important;
+    font-weight: 800 !important;
+    margin: 0 0 0.45rem 0 !important;
+    color: #193648 !important;
+    min-height: 52px !important;
+    max-height: 52px !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.015em !important;
+}
+
+.feature-card-desc {
+    color: #637d8c !important;
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    min-height: 68px !important;
+    max-height: 68px !important;
+    display: block !important;
+}
+
+/* Icon Box */
+.iconbox {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: #e8f6f3;
+    color: var(--teal);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-bottom: 0.6rem;
+}
+
+/* Canva Badges */
+.badge {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 0.3rem 0.75rem;
+    background: #e4f5ee;
+    color: #167053;
+    font-size: 0.73rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+}
+
+.badge-blue {
+    background: #e6f2fb !important;
+    color: var(--blue) !important;
+}
+
+.badge-amber {
+    background: #fff3d8 !important;
+    color: #946207 !important;
+}
+
+/* Prototype Demo Notice Banner */
+.demo-box {
+    background: #fff8e9;
+    border: 1px solid #f3e1b8;
+    color: #74531a;
+    border-radius: 12px;
+    padding: 0.8rem 1.1rem;
+    font-size: 0.84rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Healthcare Educational Notice */
+.medical-disclaimer-box {
+    background: linear-gradient(135deg, #eef8f8 0%, #e5f5ef 100%);
+    border-left: 4px solid var(--teal);
+    padding: 12px 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 0.88rem;
+    color: #0b534f;
+    box-shadow: 0 2px 8px rgba(8, 124, 118, 0.06);
+}
+
+.medical-disclaimer-box strong {
+    color: var(--teal);
+}
+
+/* Emergency Red-Flag Alert Banner */
+.emergency-alert-box {
+    background: linear-gradient(135deg, #FEF2F2 0%, #FEE2E2 100%);
+    border-left: 5px solid #EF4444;
+    padding: 16px 20px;
+    border-radius: 16px;
+    margin-bottom: 22px;
+    color: #991B1B;
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.12);
+}
+
+.emergency-alert-box h4 {
+    color: #B91C1C !important;
+    margin: 0 0 6px 0 !important;
+    font-size: 1.05rem;
+}
+
+/* Hero Art Container & Floating Card */
+.hero-art-container {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #dcf1f1, #c5dff0);
+    min-height: 380px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.float-card {
+    background: #FFFFFF;
+    box-shadow: 0 10px 30px rgba(22, 70, 88, 0.18);
+    border-radius: 16px;
+    padding: 12px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px;
+    border: 1px solid var(--line);
+}
+
+/* Custom Metric Card (Canva Style) */
+.canva-stat-card {
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 1.4rem;
+    box-shadow: 0 12px 40px rgba(24, 75, 103, 0.04);
+}
+
+.canva-stat-card .stat-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-top: 0.3rem;
+}
+
+/* Chat Layout & Bubbles */
+.bubble {
+    max-width: 82%;
+    padding: 14px 18px;
+    border-radius: 18px;
+    line-height: 1.6;
+    font-size: 0.92rem;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.bubble.user {
+    margin-left: auto;
+    background: var(--blue) !important;
+    color: #FFFFFF !important;
+    border-bottom-right-radius: 4px;
+}
+
+.bubble.assistant {
+    margin-right: auto;
+    background: #FFFFFF !important;
+    color: var(--ink) !important;
+    border: 1px solid var(--line);
+    border-bottom-left-radius: 4px;
+}
+
+/* PDF Dropzone */
+.report-drop {
+    border: 2px dashed #9dc9cd;
+    border-radius: 20px;
+    background: #f3fbfa;
+    padding: 2.2rem;
+    text-align: center;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.report-drop:hover {
+    background: #dff6ef;
+    border-color: var(--teal);
+}
+
+/* Calendar Grid */
+.calendar-container {
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 1.5rem;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.calendar-day-header {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--muted);
+    padding: 8px 0;
+}
+
+.calendar-cell {
+    min-height: 38px;
+    height: 38px;
+    width: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    background: transparent;
+    color: #193648;
+    border: none;
+    margin: 0 auto;
+}
+
+.calendar-cell.marked {
+    background: #d5eee9 !important;
+    color: #08675f !important;
+    font-weight: 800 !important;
+    border-radius: 10px !important;
+    border: none !important;
+}
+
+.cal-nav-btn button {
+    background: #eaf6f4 !important;
+    background-color: #eaf6f4 !important;
+    color: #087c76 !important;
+    border-radius: 10px !important;
+    border: none !important;
+    font-weight: 800 !important;
+    font-size: 1.1rem !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: none !important;
+}
+
+.cal-nav-btn button:hover {
+    background: #dcf2ee !important;
+    background-color: #dcf2ee !important;
+}
+
+.cal-nav-btn button *,
+.cal-nav-btn button p,
+.cal-nav-btn button span {
+    color: #087c76 !important;
+    font-weight: 800 !important;
+}
+
+/* Progress bar adherence styling */
+.adherence-bar-bg {
+    height: 12px;
+    background: #e5f0f2;
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 8px 0;
+}
+
+.adherence-bar-fill {
+    height: 100%;
+    background: #39a897;
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+/* Footer Styling */
+.canva-footer {
+    background: #193c4c !important;
+    color: #FFFFFF !important;
+    border-radius: 20px;
+    padding: 2.2rem 2rem;
+    margin-top: 3.5rem;
+}
+
+.canva-footer,
+.canva-footer p,
+.canva-footer span,
+.canva-footer strong,
+.canva-footer small,
+div[style*="background: #193c4c"] p,
+div[style*="background: #193c4c"] span,
+div[style*="background: #193c4c"] strong,
+div[style*="background: #193c4c"] small {
+    color: #FFFFFF !important;
+}
+
+.canva-footer a {
+    color: #FFFFFF !important;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.canva-footer a:hover {
+    text-decoration: underline;
+    color: #dff2f1 !important;
+}
+
+/* ==========================================================================
+   CANVA FAQ ACCORDION / DROPDOWN STYLING (<details><summary>)
+   ========================================================================== */
+details.faq-item {
+    padding: 1.15rem 0 !important;
+    border-bottom: 1px solid #edf2f5 !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease !important;
+}
+
+details.faq-item:last-child {
+    border-bottom: none !important;
+}
+
+details.faq-item summary {
+    font-size: 1.04rem !important;
+    font-weight: 800 !important;
+    color: #193648 !important;
+    list-style: none !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    user-select: none !important;
+    outline: none !important;
+    transition: color 0.2s ease !important;
+}
+
+details.faq-item summary::-webkit-details-marker {
+    display: none !important;
+}
+
+details.faq-item summary:hover {
+    color: #087c76 !important;
+}
+
+details.faq-item summary .faq-chevron {
+    color: #087c76 !important;
+    font-size: 1.35rem !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    transition: transform 0.25s ease !important;
+}
+
+details.faq-item[open] summary .faq-chevron {
+    transform: rotate(180deg) !important;
+}
+
+details.faq-item p {
+    color: #637d8c !important;
+    font-size: 0.92rem !important;
+    line-height: 1.65 !important;
+    margin: 0.75rem 0 0 0 !important;
+    animation: faqFadeIn 0.25s ease !important;
+}
+
+@keyframes faqFadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   CANVA WORKSPACE SIDEBAR & DASHBOARD SPECIFIC STYLES
+   ========================================================================== */
+.workspace-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-right: 20px;
+    border-right: 1px solid #dce9ef;
+    min-height: 100%;
+}
+
+.workspace-eyebrow {
+    color: #087c76;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.5rem 0.75rem 0.85rem 0.75rem;
+}
+
+.workspace-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 14px;
+    border-radius: 10px;
+    color: #567484 !important;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+
+.workspace-item svg {
+    color: #567484;
+    transition: color 0.2s ease;
+}
+
+.workspace-item:hover {
+    background-color: #eaf6f4;
+    color: #087c76 !important;
+}
+
+.workspace-item:hover svg {
+    color: #087c76;
+}
+
+.workspace-item.active {
+    color: #193648 !important;
+    font-weight: 800 !important;
+    background-color: transparent !important;
+}
+
+.workspace-divider {
+    height: 1px;
+    background-color: #e2edf2;
+    margin: 8px 10px 12px 10px;
+}
+
+/* Quick Action Buttons inside Dashboard Card */
+div[data-testid="stVerticalBlockBorderWrapper"] .stButton > button {
+    background: #ebf5f7 !important;
+    background-color: #ebf5f7 !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 0.85rem 1rem !important;
+    box-shadow: none !important;
+    margin-bottom: 6px !important;
+}
+
+div[data-testid="stVerticalBlockBorderWrapper"] .stButton > button *,
+div[data-testid="stVerticalBlockBorderWrapper"] .stButton > button p,
+div[data-testid="stVerticalBlockBorderWrapper"] .stButton > button span {
+    color: #0e5f73 !important;
+    font-weight: 800 !important;
+    font-size: 0.92rem !important;
+    font-family: 'Manrope', sans-serif !important;
+}
+
+div[data-testid="stVerticalBlockBorderWrapper"] .stButton > button:hover {
+    background: #def0f2 !important;
+    background-color: #def0f2 !important;
+    transform: translateY(-1px) !important;
+}
+
+div[data-testid="stVerticalBlockBorderWrapper"] .stButton > button:hover * {
+    color: #084958 !important;
+}
+
+/* ==========================================================================
+   CANVA CHAT INTERFACE & INPUT BAR STYLING
+   ========================================================================== */
+form[data-testid="stForm"] {
+    border: 1px solid #cde0e8 !important;
+    border-radius: 14px !important;
+    background: #FFFFFF !important;
+    padding: 6px 12px !important;
+    box-shadow: 0 2px 10px rgba(24, 75, 103, 0.03) !important;
+}
+
+form[data-testid="stForm"] [data-testid="stTextInput"] input {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 8px 4px !important;
+    font-size: 0.95rem !important;
+    color: #193648 !important;
+}
+
+form[data-testid="stForm"] [data-testid="stTextInput"] > div,
+form[data-testid="stForm"] [data-testid="stTextInput"] > div > div {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* ==========================================================================
+   MEDICAL REPORTS DROPZONE & INPUT STYLING
+   ========================================================================== */
+[data-testid="stFileUploader"] {
+    background: transparent !important;
+}
+
+[data-testid="stFileUploaderDropzone"] {
+    background: #f7fbfb !important;
+    border: 1.5px dashed #9fd2c7 !important;
+    border-radius: 20px !important;
+    padding: 24px 20px !important;
+    text-align: center !important;
+}
+
+[data-testid="stFileUploaderDropzone"] button {
+    background: #11556e !important;
+    background-color: #11556e !important;
+    color: #FFFFFF !important;
+    border-radius: 10px !important;
+    border: none !important;
+    font-weight: 800 !important;
+    font-size: 0.92rem !important;
+    padding: 9px 24px !important;
+    box-shadow: 0 4px 14px rgba(17, 85, 110, 0.2) !important;
+}
+
+[data-testid="stFileUploaderDropzone"] button *,
+[data-testid="stFileUploaderDropzone"] button p,
+[data-testid="stFileUploaderDropzone"] button span {
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+}
+
+[data-testid="stFileUploaderDropzone"] button:hover {
+    background: #0d4458 !important;
+    background-color: #0d4458 !important;
+}
+
+.stTextArea textarea {
+    border: 1px solid #dce9ef !important;
+    border-radius: 12px !important;
+    padding: 14px !important;
+    font-size: 0.95rem !important;
+    color: #193648 !important;
+    background-color: #FFFFFF !important;
+}
+
+.stTextArea textarea:focus {
+    border-color: #087c76 !important;
+    box-shadow: 0 0 0 1px #087c76 !important;
+}
+
+/* ==========================================================================
+   MEDICATION ACTION BUTTONS STYLING
+   ========================================================================== */
+.med-card-btn button {
+    background: #eaf6f7 !important;
+    background-color: #eaf6f7 !important;
+    color: #0e5f73 !important;
+    border: none !important;
+    border-radius: 12px !important;
+    font-weight: 800 !important;
+    font-size: 0.92rem !important;
+    padding: 0.75rem 1rem !important;
+    box-shadow: none !important;
+}
+
+.med-card-btn button *,
+.med-card-btn button p,
+.med-card-btn button span {
+    color: #0e5f73 !important;
+    font-weight: 800 !important;
+    font-size: 0.92rem !important;
+}
+
+.med-card-btn button:hover {
+    background: #def0f2 !important;
+    background-color: #def0f2 !important;
+    transform: translateY(-1px) !important;
+}
+
+.med-card-btn button:hover * {
+    color: #084958 !important;
+}
+
+/* ==========================================================================
+   PROFILE PAGE BUTTONS STYLING
+   ========================================================================== */
+.profile-edit-btn button {
+    background: #eaf6f7 !important;
+    background-color: #eaf6f7 !important;
+    color: #0e5f73 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-weight: 800 !important;
+    font-size: 0.92rem !important;
+    padding: 0.55rem 1.6rem !important;
+    box-shadow: none !important;
+    display: inline-flex !important;
+    width: auto !important;
+}
+
+.profile-edit-btn button *,
+.profile-edit-btn button p,
+.profile-edit-btn button span {
+    color: #0e5f73 !important;
+    font-weight: 800 !important;
+}
+
+.profile-edit-btn button:hover {
+    background: #def0f2 !important;
+    background-color: #def0f2 !important;
+}
+
+.profile-edit-btn button:hover * {
+    color: #084958 !important;
+}
