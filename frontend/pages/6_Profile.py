@@ -106,8 +106,7 @@ top_navbar_html = (
     '<a href="/" target="_self" class="canva-nav-link">Home</a>'
     '<a href="/#features" target="_self" class="canva-nav-link">Features</a>'
     '<a href="/Dashboard" target="_self" class="canva-nav-link">Dashboard</a>'
-    '<a href="/Login_Register" target="_self" class="canva-nav-link">Login / Register</a>'
-        '<a href="/About" target="_self" class="canva-nav-link">About</a>'
+    '<a href="/About" target="_self" class="canva-nav-link">About</a>'
     '<a href="/Contact" target="_self" class="canva-nav-link">Contact</a>'
     '</div>'
     f'{auth_nav_right}'
@@ -258,6 +257,15 @@ with col_main:
 
 def safe_switch_to_home():
     """Safely redirects to Home whether Streamlit entrypoint is app.py or Home.py."""
+    try:
+        from streamlit.runtime.scriptrunner import get_script_run_ctx
+        ctx = get_script_run_ctx()
+        if ctx and ctx.main_script_path:
+            entry_name = os.path.basename(ctx.main_script_path)
+            st.switch_page(entry_name)
+            return
+    except Exception:
+        pass
     for target in ["app.py", "Home.py"]:
         try:
             st.switch_page(target)

@@ -111,8 +111,7 @@ st.markdown(
                 <a href="/" target="_self" class="canva-nav-link">Home</a>
                 <a href="/#features" target="_self" class="canva-nav-link">Features</a>
                 <a href="/Dashboard" target="_self" class="canva-nav-link">Dashboard</a>
-                <a href="/Login_Register" target="_self" class="canva-nav-link active" style="color: #076c70; font-weight: 800;">Login / Register</a>
-                <a href="/About" target="_self" class="canva-nav-link">About</a>
+                                <a href="/About" target="_self" class="canva-nav-link">About</a>
                 <a href="/Contact" target="_self" class="canva-nav-link">Contact</a>
             </div>
             <div style="display: flex; align-items: center; gap: 10px;">

@@ -68,7 +68,7 @@ ai_interactions = f"{stats_data.get('assistant_interactions_30_days', 0):,}"
 # ==============================================================================
 # TOP NAVBAR (100% Canva Layout: Logo Left | Menu Center | Auth Right)
 # ==============================================================================
-user_greeting = f'<a href="/Profile" target="_self" class="canva-nav-link" style="color: #087c76; font-weight: 700;">👤 {user_session.get("full_name", "Admin")}</a><a href="/Login_Register" target="_self" class="canva-nav-link" style="color: #087c76; font-size: 0.86rem; font-weight: 700;">Login / Switch</a>'
+user_greeting = f'<a href="/Profile" target="_self" class="canva-nav-link" style="color: #087c76; font-weight: 700;">👤 {user_session.get("full_name", "Admin")}</a>'
 
 top_navbar_html = f"""
 <div style="background: #FFFFFF; border-bottom: 1px solid #dce9ef; padding: 12px 24px; border-radius: 16px; margin-bottom: 2rem; box-shadow: 0 4px 20px rgba(24, 75, 103, 0.04);">
@@ -81,7 +81,6 @@ top_navbar_html = f"""
 <a href="/" target="_self" class="canva-nav-link">Home</a>
 <a href="/#features" target="_self" class="canva-nav-link">Features</a>
 <a href="/Dashboard" target="_self" class="canva-nav-link">Dashboard</a>
-<a href="/Login_Register" target="_self" class="canva-nav-link">Login / Register</a>
 <a href="/About" target="_self" class="canva-nav-link">About</a>
 <a href="/Contact" target="_self" class="canva-nav-link">Contact</a>
 </div>

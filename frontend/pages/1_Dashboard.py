@@ -54,8 +54,7 @@ auth_nav_right = (
     f'<span style="color: #155c73; font-weight: 700; font-size: 0.88rem;">{first_name}</span>'
     f'<div style="width: 32px; height: 32px; border-radius: 50%; background: #d5eee9; color: #08675f; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem;">{initials}</div>'
     f'<a href="/Profile" target="_self" class="canva-nav-link" style="color: #547382; font-size: 0.86rem;">Profile</a>'
-    '<a href="/Login_Register" target="_self" class="canva-nav-link" style="color: #087c76; font-size: 0.86rem; font-weight: 700;">Login / Switch</a>'
-    f'</div>'
+f'</div>'
 )
 
 # ==============================================================================
@@ -72,8 +71,7 @@ top_navbar_html = (
     '<a href="/" target="_self" class="canva-nav-link">Home</a>'
     '<a href="/#features" target="_self" class="canva-nav-link">Features</a>'
     '<a href="/Dashboard" target="_self" class="canva-nav-link active" style="color: #076c70; background-color: #dff2f1;">Dashboard</a>'
-    '<a href="/Login_Register" target="_self" class="canva-nav-link">Login / Register</a>'
-        '<a href="/About" target="_self" class="canva-nav-link">About</a>'
+    '<a href="/About" target="_self" class="canva-nav-link">About</a>'
     '<a href="/Contact" target="_self" class="canva-nav-link">Contact</a>'
     '</div>'
     f'{auth_nav_right}'
